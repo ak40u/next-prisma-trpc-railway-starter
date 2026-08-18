@@ -29,13 +29,17 @@ changed where the transformer is configured.
 | `src/server/router.ts` | The tRPC router — a query and a validated mutation |
 | `src/app/page.tsx` | A form that writes and a list that reads back |
 | `railway.json` | Migrations as a pre-deploy step, health check on `/api/health` |
+| `predeploy.sh` | Runs the migration, retrying only while Postgres is still unreachable |
 
 ## Four things worth knowing
 
 - **Migrations run pre-deploy, not at build.** The build container has no database.
   `prisma migrate deploy` runs in the pre-deploy step, where one exists, and before
   the new version starts taking traffic. Putting it in the build is the single most
-  common way this stack fails on a platform.
+  common way this stack fails on a platform. On a project's first deploy the app
+  and Postgres start together, so `predeploy.sh` retries Prisma's `P1001` — the
+  "can't reach the database server" error — for up to a minute; Railway itself
+  never retries a failed pre-deploy command.
 - **`prisma generate` does run at build**, because generated client code has to be
   in the image. Build and pre-deploy are different containers, and files written in
   the second one do not survive.
