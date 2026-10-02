@@ -11,30 +11,32 @@
     "migrate": "prisma migrate deploy"
   },
   "dependencies": {
-    "@prisma/adapter-pg": "^7.9.0",
-    "@prisma/client": "^7.9.0",
-    "@tanstack/react-query": "^5.101.4",
-    "@trpc/client": "^11.18.0",
-    "@trpc/react-query": "^11.18.0",
-    "@trpc/server": "^11.18.0",
-    "next": "^16.2.12",
-    "pg": "^8.22.0",
-    "prisma": "^7.9.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "@tanstack/react-query": "^5.104.1",
+    "@trpc/client": "^11.19.0",
+    "@trpc/react-query": "^11.19.0",
+    "@trpc/server": "^11.19.0",
+    "next": "^16.3.8",
+    "pg": "^8.23.1",
+    "prisma": "^7.10.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "superjson": "^2.2.6",
-    "zod": "^4.4.3"
+    "zod": "^4.6.5"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
-    "@types/pg": "^8.20.0",
-    "@types/react": "^19.2.7",
+    "@types/node": "^24.19.1",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
     "typescript": "^7.0.2"
   },
   "overrides": {
-    "find-my-way": "^9.7.0",
-    "postcss": "^8.5.23",
-    "sharp": "^0.35.3",
-    "valibot": "^1.4.2"
+    "deepmerge-ts": "^8.0.2",
+    "find-my-way": "^9.9.0",
+    "mysql2": "^3.24.5",
+    "postcss": "^8.5.28",
+    "sharp": "^0.35.5",
+    "valibot": "^1.5.0"
   }
 }
