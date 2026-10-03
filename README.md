@@ -53,8 +53,9 @@ changed where the transformer is configured.
 
 `url` is gone from the `datasource` block. The CLI reads it from `prisma.config.ts`;
 the application passes its own connection to `PrismaClient` through a driver
-adapter, `@prisma/adapter-pg` here. The upside on a platform is real: the schema no
-longer needs a reachable database at build time.
+adapter, `@prisma/adapter-pg` here. The upside on a platform is real: the build no
+longer needs a reachable database — `prisma generate` only needs `DATABASE_URL` to be
+set, and the platform supplies it from the Postgres service.
 
 ## TypeScript 7
 
